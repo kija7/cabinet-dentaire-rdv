@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prise de rendez-vous | Cabinet Dentaire Sourire Santé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 2.34 1.12 4.42 2.86 5.74C8.22 15.38 8 16.15 8 17c0 2.21 1.79 4 4 4s4-1.79 4-4c0-.85-.22-1.62-.86-2.26C16.88 13.42 18 11.34 18 9c0-3.87-3.13-7-7-7zm0 16c-1.1 0-2-.9-2-2 0-.55.22-1.05.59-1.41C11.95 13.82 13 13 13 12c0-.55-.45-1-1-1s-1 .45-1 1c0 .55-.45 1-1 1s-1-.45-1-1c0-1.66 1.34-3 3-3s3 1.34 3 3c0 1-.5 1.88-1.27 2.41.37.36.59.86.59 1.41 0 1.1-.9 2-2 2z" fill="currentColor"/>
+        </svg>
+        <span>Cabinet Dentaire Sourire Santé</span>
+      </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#horaires">Horaires</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-sm" href="#rdv">Prendre RDV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Prenez rendez-vous en ligne chez votre dentiste</h1>
+          <p>Consultation, détartrage, soins ou urgence dentaire : réservez votre créneau en quelques clics. Notre équipe vous recontacte rapidement pour confirmer.</p>
+          <a class="btn btn-lg" href="#rdv">Réserver maintenant</a>
+        </div>
+        <div class="hero-card">
+          <div class="info-item">
+            <strong>Adresse</strong>
+            <span>123 Avenue de la Santé, 75015 Paris</span>
+          </div>
+          <div class="info-item">
+            <strong>Téléphone</strong>
+            <span>01 23 45 67 89</span>
+          </div>
+          <div class="info-item">
+            <strong>Horaires</strong>
+            <span>Lun - Ven : 9h - 19h<br>Samedi : 9h - 13h</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rdv" class="section">
+      <div class="container form-container">
+        <div class="form-header">
+          <h2>Demande de rendez-vous</h2>
+          <p>Complétez le formulaire ci-dessous. Nous vous confirmerons le rendez-vous par téléphone ou par e-mail.</p>
+        </div>
+
+        <form id="appointment-form" class="appointment-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Prénom *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Jean" required />
+              <span class="error" id="error-firstName"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Nom *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Dupont" required />
+              <span class="error" id="error-lastName"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required />
+              <span class="error" id="error-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required />
+              <span class="error" id="error-phone"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Type de soin *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Choisissez un soin</option>
+                <option value="consultation">Consultation / Examen bucco-dentaire</option>
+                <option value="detartrage">Détartrage</option>
+                <option value="soin">Soin (carie, dévitalisation, etc.)</option>
+                <option value="esthetique">Esthétique dentaire (blanchiment, facette)</option>
+                <option value="urgence">Urgence dentaire</option>
+                <option value="autre">Autre</option>
+              </select>
+              <span class="error" id="error-service"></span>
+            </div>
+            <div class="form-group">
+              <label for="date">Date souhaitée *</label>
+              <input type="date" id="date" name="date" required />
+              <span class="error" id="error-date"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Heure préférée *</label>
+            <div class="time-slots" id="time-slots">
+              <button type="button" class="time-slot" data-value="09:00">09:00</button>
+              <button type="button" class="time-slot" data-value="10:00">10:00</button>
+              <button type="button" class="time-slot" data-value="11:00">11:00</button>
+              <button type="button" class="time-slot" data-value="14:00">14:00</button>
+              <button type="button" class="time-slot" data-value="15:00">15:00</button>
+              <button type="button" class="time-slot" data-value="16:00">16:00</button>
+              <button type="button" class="time-slot" data-value="17:00">17:00</button>
+            </div>
+            <input type="hidden" id="time" name="time" required />
+            <span class="error" id="error-time"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (optionnel)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement vos symptômes ou vos questions..."></textarea>
+          </div>
+
+          <div class="form-group form-check">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">J'accepte que mes données soient utilisées pour la prise de rendez-vous. *</label>
+            <span class="error" id="error-consent"></span>
+          </div>
+
+          <button type="submit" class="btn btn-submit">Confirmer ma demande</button>
+        </form>
+
+        <div id="success-message" class="success-message" role="status" aria-live="polite">
+          <div class="success-icon">✓</div>
+          <h3>Votre demande a bien été envoyée</h3>
+          <p>Nous vous recontacterons rapidement pour confirmer votre rendez-vous.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Nos soins dentaires</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Consultation</h3>
+            <p>Examen complet de votre bouche et de vos dents avec un bilan personnalisé.</p>
+          </div>
+          <div class="service-card">
+            <h3>Détartrage</h3>
+            <p>Nettoyage professionnel pour préserver vos gencives et votre haleine.</p>
+          </div>
+          <div class="service-card">
+            <h3>Soins conservateurs</h3>
+            <p>Traitement des caries, obturations et soins des dents dévitalisées.</p>
+          </div>
+          <div class="service-card">
+            <h3>Urgences</h3>
+            <p>Prise en charge rapide des douleurs, traumatismes et infections dentaires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-inner">
+      <p><strong>Cabinet Dentaire Sourire Santé</strong></p>
+      <p>123 Avenue de la Santé, 75015 Paris · 01 23 45 67 89</p>
+      <p class="footer-note">Page de démonstration — les rendez-vous sont confirmés par l'équipe du cabinet.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
